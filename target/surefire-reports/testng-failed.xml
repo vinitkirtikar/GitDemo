@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="VinitCom.TestComponents.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Error Validation(failed)" verbose="0">
+    <classes>
+      <class name="VinitCom.tests.ErrorValidation">
+        <methods>
+          <include name="loginErrorValidation"/>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+          <include name="productErrorValidation"/>
+        </methods>
+      </class> <!-- VinitCom.tests.ErrorValidation -->
+    </classes>
+  </test> <!-- Error Validation(failed) -->
+  <test thread-count="5" parallel="tests" name="Stand Alone Test(failed)" verbose="0">
+    <classes>
+      <class name="VinitCom.tests.StandAloneTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="launchApplication"/>
+          <include name="SubmitOrder" invocation-numbers="0"/>
+          <include name="verifyOrderHistory"/>
+        </methods>
+      </class> <!-- VinitCom.tests.StandAloneTest -->
+    </classes>
+  </test> <!-- Stand Alone Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
