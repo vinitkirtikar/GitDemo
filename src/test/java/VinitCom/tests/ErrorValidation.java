@@ -58,6 +58,27 @@ public class ErrorValidation extends BaseTest {
 	
 		
 }
+	@Test(groups = {"Error"},retryAnalyzer=Retry.class)
+	public void productErrorValdation() throws IOException, InterruptedException
+{
+		String productName = "ADIDAaS ORIGINAL";
+		
+		ProductCatalog productcat = landingpage.loginApplication("vinit123@gmail.com", "Vinit@123");
+
+		Thread.sleep(6000);
+
+		List<WebElement> products = productcat.getProductList();
+		productcat.addProductToCart(productName);
+		MyCartPAge mycartpage = productcat.clickonCart();
+
+		Boolean match = mycartpage.selectedProductpresent(productName);
+		Assert.assertFalse(match);
+
+	
+
+	
+		
+}
 	}
 
 
